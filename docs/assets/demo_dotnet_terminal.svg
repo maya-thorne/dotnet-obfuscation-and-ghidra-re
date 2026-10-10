@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="100%" height="100%">
+  <defs>
+    <linearGradient id="termBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a14"/>
+      <stop offset="100%" stop-color="#020409"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="460" rx="12" fill="url(#termBg)"/>
+  <rect x="1" y="1" width="998" height="458" rx="11" fill="none" stroke="#1e293b" stroke-width="1.3"/>
+
+  <!-- Window Header -->
+  <rect width="1000" height="38" rx="12" fill="#0f172a"/>
+  <rect y="26" width="1000" height="12" fill="#0f172a"/>
+  <circle cx="24" cy="19" r="6" fill="#ef4444"/>
+  <circle cx="44" cy="19" r="6" fill="#f59e0b"/>
+  <circle cx="64" cy="19" r="6" fill="#10b981"/>
+  <text x="500" y="24" fill="#94a3b8" font-family="ui-monospace, monospace" font-size="12" font-weight="700" text-anchor="middle">
+    PowerShell 7 · dotnet-obfuscation-and-ghidra-re Forensic CLI Engine
+  </text>
+  <line x1="0" y1="38" x2="1000" y2="38" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Terminal Output Code -->
+  <g transform="translate(28, 68)" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="12" text-rendering="geometricPrecision">
+    <text y="18" fill="#38bdf8">&gt; python -m src.cli samples/xorStub.exe -v</text>
+    <text y="42" fill="#64748b">===============================================================================</text>
+    <text y="62" fill="#34d399" font-weight="700">  🔬 dotnet-obfuscation-and-ghidra-re · Blue Team Forensic Analyzer</text>
+    <text y="82" fill="#94a3b8">  Engineered by Maya Thorne · Systems &amp; Reverse Engineering Research</text>
+    <text y="102" fill="#64748b">===============================================================================</text>
+    <text y="128" fill="#f8fafc">[*] Target Binary: samples/xorStub.exe (217,600 bytes)</text>
+    <text y="148" fill="#f8fafc">[*] Architecture:  x86 (PE32)</text>
+    <text y="168" fill="#f8fafc">[*] Is .NET Assembly: True</text>
+    <text y="188" fill="#f8fafc">[*] CLR Runtime:   v4.0.30319</text>
+    <text y="208" fill="#f59e0b" font-weight="700">[*] Risk Score:    50 / 100</text>
+    <text y="228" fill="#f59e0b" font-weight="700">[*] Final Verdict: HIGH (OBFUSCATED / SUSPICIOUS)</text>
+    <text y="254" fill="#38bdf8" font-weight="700">--- Detected Protectors &amp; Signatures ---</text>
+    <text y="274" fill="#4ade80">  [+] xorPacker (Confidence: MEDIUM) - Tokens: xorStub</text>
+    <text y="300" fill="#38bdf8" font-weight="700">--- Section Table Entropy Breakdown ---</text>
+    <text y="320" fill="#cbd5e1">  Section: .text      RawSize: 215040   Entropy: 3.3589</text>
+    <text y="340" fill="#cbd5e1">  Section: .rsrc      RawSize: 1536     Entropy: 4.0535</text>
+    <text y="360" fill="#cbd5e1">  Section: .reloc     RawSize: 512      Entropy: 0.1019</text>
+  </g>
+</svg>
