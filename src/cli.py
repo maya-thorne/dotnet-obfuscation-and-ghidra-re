@@ -18,6 +18,14 @@ import json
 import argparse
 from typing import Optional
 
+# Ensure UTF-8 stdout on Windows terminals
+if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 from .pe_overlay_detector import PEOverlayDetector
 from .cil_metadata_inspector import CILMetadataInspector
 from .xor_packer_hunter import XorPackerHunter

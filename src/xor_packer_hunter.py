@@ -74,32 +74,15 @@ class XorPackerHunter:
             enc_key_str = key_bytes.decode("utf-8", errors="ignore")
             self.recovered_random_key = self.rot13_xor_cipher(enc_key_str, self.MASTER_KEY)
 
-            # Step 2: Decode Base64 payload, apply XOR with recovered random key, decode Base64 PE
-            # xorPacker encodes as: Base64(XOR(Base64(TargetPE), randomKey))
-            payload_step1_str = self.rot13_xor_cipher(self.b64_ciphered_payload, self.recovered_random_key)
-            # In some xorPacker versions, payload_step1 is directly base64-encoded PE bytes,
-            # or double base64-encoded.
-            try:
-                decrypted_bytes = base64.b64decode(payload_step1_str)
-                # Verify PE
-                if decrypted_bytes[:2] == b"MZ":
-                    self.decrypted_payload = decrypted_bytes
-                    self.is_payload_valid_pe = True
-                    return
-            except Exception:
-                pass
+            # Step 2: Decode Base64 cipheredFile, decrypt with recovered random key, decode Base64 PE
+            ciphered_bytes = base64.b64decode(self.b64_ciphered_payload)
+            ciphered_str = ciphered_bytes.decode("utf-8", errors="ignore")
+            intermediate_b64 = self.rot13_xor_cipher(ciphered_str, self.recovered_random_key)
+            pe_bytes = base64.b64decode(intermediate_b64)
 
-            # Alternative encoding test (payload string was utf8 decoded before XOR)
-            try:
-                raw_xor_bytes = base64.b64decode(self.b64_ciphered_payload)
-                raw_xor_str = raw_xor_bytes.decode("utf-8", errors="ignore")
-                intermediate = self.rot13_xor_cipher(raw_xor_str, self.recovered_random_key)
-                pe_bytes = base64.b64decode(intermediate)
-                if pe_bytes[:2] == b"MZ":
-                    self.decrypted_payload = pe_bytes
-                    self.is_payload_valid_pe = True
-            except Exception:
-                pass
+            if pe_bytes[:2] == b"MZ":
+                self.decrypted_payload = pe_bytes
+                self.is_payload_valid_pe = True
 
         except Exception:
             pass
