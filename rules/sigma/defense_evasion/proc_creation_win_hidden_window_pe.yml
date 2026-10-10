@@ -1,0 +1,27 @@
+title: Process Spawning with Hidden Console Window via Native ShowWindow
+id: proc_creation_win_hidden_window_pe
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Process Spawning with Hidden Console Window via Native ShowWindow.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1036
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    ParentCommandLine|contains: 'ShowWindow'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: high

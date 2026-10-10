@@ -1,0 +1,27 @@
+title: PowerShell In-Memory Reflection Load of Obfuscated PE
+id: proc_creation_win_powershell_b64_pe_inject
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for PowerShell In-Memory Reflection Load of Obfuscated PE.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1059.001
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    CommandLine|contains: '[System.Reflection.Assembly]::Load'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: high

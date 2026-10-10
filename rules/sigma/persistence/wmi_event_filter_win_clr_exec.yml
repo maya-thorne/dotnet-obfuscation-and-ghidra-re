@@ -1,0 +1,27 @@
+title: WMI Event Consumer Spawning Managed Payload
+id: wmi_event_filter_win_clr_exec
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for WMI Event Consumer Spawning Managed Payload.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1546.003
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    Destination: 'ActiveScriptEventConsumer'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: critical

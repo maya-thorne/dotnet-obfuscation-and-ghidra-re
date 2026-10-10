@@ -1,0 +1,24 @@
+# ==============================================================================
+# Splunk Enterprise Security (ES) Production SPL Feeds
+# Target: .NET Obfuscators, Native Packers, and Droppers
+# Author: Maya Thorne (Systems & Detection Engineering Research)
+# License: MT-SRL
+# ==============================================================================
+
+# 1. Detect Suspicious Executable Dropped and Executed from %TEMP%
+index=windows (EventCode=1 OR EventCode=4688) Image="*\AppData\Local\Temp\*.exe"
+| eval execution_path=lower(Image)
+| stats count earliest(_time) as first_seen latest(_time) as last_seen by host, User, Image, ParentImage, CommandLine
+| where count > 0
+
+# 2. Detect ConfuserEx CLI and dnSpy Reverse Engineering Activity
+index=windows (EventCode=1 OR EventCode=4688) (Image="*\Confuser.CLI.exe" OR Image="*\dnSpy.exe" OR Image="*\ILSpy.exe")
+| table _time, host, User, Image, CommandLine, ParentImage
+
+# 3. Detect Hidden Console Windows Spawned by Dropper Stubs
+index=windows EventCode=1 (CommandLine="*ShowWindow*" OR CommandLine="*-w hidden*" OR CommandLine="*-windowstyle hidden*")
+| table _time, host, User, ParentImage, Image, CommandLine
+
+# 4. Detect Image Loading of CLR Runtimes from Abnormal Paths
+index=windows EventCode=7 (ImageLoaded="*\clr.dll" OR ImageLoaded="*\mscorwks.dll") NOT ImageLoaded="C:\Windows\Microsoft.NET\*"
+| table _time, host, Image, ImageLoaded, Signed

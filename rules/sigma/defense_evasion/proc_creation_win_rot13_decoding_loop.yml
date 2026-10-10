@@ -1,0 +1,27 @@
+title: Heuristic Detection of In-Memory Byte Transposition Loop
+id: proc_creation_win_rot13_decoding_loop
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Heuristic Detection of In-Memory Byte Transposition Loop.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1027
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    CallTrace|contains: 'ROT13Encode'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: medium

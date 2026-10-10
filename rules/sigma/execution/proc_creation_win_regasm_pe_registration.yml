@@ -1,0 +1,27 @@
+title: Regasm Process Execution Registering Unsigned DLL
+id: proc_creation_win_regasm_pe_registration
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Regasm Process Execution Registering Unsigned DLL.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1218.009
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    Image|endswith: '\regasm.exe'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: medium

@@ -1,0 +1,27 @@
+title: IntelliLock Licensing and Locking Hook Detection
+id: proc_creation_win_intellilock_hook
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for IntelliLock Licensing and Locking Hook Detection.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1027
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    ImageLoaded|contains: 'IntelliLock'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: medium

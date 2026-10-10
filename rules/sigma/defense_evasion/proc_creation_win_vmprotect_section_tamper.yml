@@ -1,0 +1,27 @@
+title: Process Memory Section Virtual Protect Tamper in .vmp
+id: proc_creation_win_vmprotect_section_tamper
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Process Memory Section Virtual Protect Tamper in .vmp.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1055
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    TargetObject|contains: '.vmp'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: high

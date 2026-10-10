@@ -1,0 +1,27 @@
+title: Tasklist Command Scanning for Process Monitor / Wireshark
+id: proc_creation_win_tasklist_security_processes
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Tasklist Command Scanning for Process Monitor / Wireshark.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1057
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    CommandLine|contains: 'procmon'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: medium

@@ -1,0 +1,27 @@
+title: Unusual Image Load of CLR Core DLLs from Non-System Path
+id: image_load_win_clr_unusual_location
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Unusual Image Load of CLR Core DLLs from Non-System Path.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1055
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    ImageLoaded|endswith: '\clr.dll'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: high

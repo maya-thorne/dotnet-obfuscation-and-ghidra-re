@@ -1,0 +1,27 @@
+title: WMI SecurityCenter2 Query Checking Installed Antivirus
+id: proc_creation_win_antivirus_detection_query
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for WMI SecurityCenter2 Query Checking Installed Antivirus.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1518.001
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    CommandLine|contains: 'root\SecurityCenter2'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: medium

@@ -1,0 +1,27 @@
+title: Rundll32 Invoking Unmanaged Export from Managed DLL
+id: proc_creation_win_rundll32_clr_export
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Rundll32 Invoking Unmanaged Export from Managed DLL.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1218.011
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    Image|endswith: '\rundll32.exe'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: high

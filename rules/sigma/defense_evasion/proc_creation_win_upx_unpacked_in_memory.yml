@@ -1,0 +1,27 @@
+title: UPX Unpacked Executable Dynamic Relocation Event
+id: proc_creation_win_upx_unpacked_in_memory
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for UPX Unpacked Executable Dynamic Relocation Event.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1027.002
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    CallTrace|contains: 'UPX'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: medium

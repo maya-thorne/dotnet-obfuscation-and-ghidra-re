@@ -1,0 +1,27 @@
+title: Systeminfo Execution Gathering OS Build and Hotfix History
+id: proc_creation_win_systeminfo_os_profiling
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Systeminfo Execution Gathering OS Build and Hotfix History.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1082
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    Image|endswith: '\systeminfo.exe'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: low

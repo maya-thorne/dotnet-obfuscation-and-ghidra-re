@@ -1,0 +1,27 @@
+title: Regsvcs Execution Loading Managed Assembly as COM Component
+id: proc_creation_win_regsvcs_com_load
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Regsvcs Execution Loading Managed Assembly as COM Component.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1218.009
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    Image|endswith: '\regsvcs.exe'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: medium

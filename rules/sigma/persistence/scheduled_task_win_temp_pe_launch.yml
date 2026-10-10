@@ -1,0 +1,27 @@
+title: Scheduled Task Triggering Executable from Temp Directory
+id: scheduled_task_win_temp_pe_launch
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Scheduled Task Triggering Executable from Temp Directory.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1053.005
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    Action|contains: '\AppData\Local\Temp\'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: high

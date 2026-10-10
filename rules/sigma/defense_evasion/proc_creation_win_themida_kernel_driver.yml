@@ -1,0 +1,27 @@
+title: Attempted Load of Themida Oreans Anti-Cheat Driver
+id: proc_creation_win_themida_kernel_driver
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Attempted Load of Themida Oreans Anti-Cheat Driver.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1068
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    ImageLoaded|contains: 'oreans32.sys'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: critical

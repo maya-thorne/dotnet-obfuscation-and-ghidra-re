@@ -1,0 +1,27 @@
+title: APPDOMAIN_MANAGER_ASM Redirection Hijack
+id: proc_creation_win_appdomain_manager_hijack
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for APPDOMAIN_MANAGER_ASM Redirection Hijack.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1574.011
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    TargetObject|contains: 'APPDOMAIN_MANAGER_ASM'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: critical

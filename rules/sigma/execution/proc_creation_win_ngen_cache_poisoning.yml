@@ -1,0 +1,27 @@
+title: NGen Cache Execution with Mismatched Metadata Hash
+id: proc_creation_win_ngen_cache_poisoning
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for NGen Cache Execution with Mismatched Metadata Hash.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1036.005
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    Image|endswith: '\ngen.exe'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: high

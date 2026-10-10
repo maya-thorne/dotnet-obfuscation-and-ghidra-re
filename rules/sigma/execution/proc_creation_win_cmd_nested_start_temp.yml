@@ -1,0 +1,27 @@
+title: cmd.exe Nested Execution of Dropped Temp Executable
+id: proc_creation_win_cmd_nested_start_temp
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for cmd.exe Nested Execution of Dropped Temp Executable.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1059.003
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    CommandLine|contains: 'cmd.exe /c start'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: high

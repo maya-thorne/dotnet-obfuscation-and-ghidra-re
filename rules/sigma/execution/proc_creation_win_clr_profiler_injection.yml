@@ -1,0 +1,27 @@
+title: Environment Variable Hijack of COR_ENABLE_PROFILING
+id: proc_creation_win_clr_profiler_injection
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Environment Variable Hijack of COR_ENABLE_PROFILING.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1574.010
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    TargetObject|contains: 'COR_ENABLE_PROFILING'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: critical

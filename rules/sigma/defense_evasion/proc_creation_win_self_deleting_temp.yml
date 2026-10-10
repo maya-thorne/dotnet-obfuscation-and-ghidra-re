@@ -1,0 +1,27 @@
+title: Immediate Self-Deletion of Temporary Dropped Executable
+id: proc_creation_win_self_deleting_temp
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Immediate Self-Deletion of Temporary Dropped Executable.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1070.004
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    ParentProcessName|endswith: 'cmd.exe'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: critical

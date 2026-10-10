@@ -1,0 +1,27 @@
+title: Whoami Command Checking Elevated SeDebugPrivilege
+id: proc_creation_win_whoami_priv_check
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Whoami Command Checking Elevated SeDebugPrivilege.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1033
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    CommandLine|contains: 'whoami /priv'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: low

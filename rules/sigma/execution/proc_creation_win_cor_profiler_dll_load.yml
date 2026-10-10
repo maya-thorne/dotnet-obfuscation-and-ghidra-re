@@ -1,0 +1,27 @@
+title: Unusual COR_PROFILER GUID Mapping in Process Environment
+id: proc_creation_win_cor_profiler_dll_load
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Unusual COR_PROFILER GUID Mapping in Process Environment.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1574.010
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    TargetObject|contains: 'COR_PROFILER'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: high

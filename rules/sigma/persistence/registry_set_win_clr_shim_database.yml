@@ -1,0 +1,27 @@
+title: Shim Database SDB Entry for Obfuscated Managed Executable
+id: registry_set_win_clr_shim_database
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Shim Database SDB Entry for Obfuscated Managed Executable.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1546.011
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    TargetObject|contains: '\Compatibility Assistant\Store\'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: medium

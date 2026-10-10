@@ -1,0 +1,27 @@
+title: Netstat Scanning Active TCP / Listening Endpoint Ports
+id: proc_creation_win_netstat_port_scan
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Netstat Scanning Active TCP / Listening Endpoint Ports.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1049
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    CommandLine|contains: 'netstat -ano'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: low

@@ -1,0 +1,27 @@
+title: API Hooking on VirtualProtect / ZwQueryVirtualMemory
+id: proc_creation_win_anti_dump_hook
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for API Hooking on VirtualProtect / ZwQueryVirtualMemory.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1055
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    TargetProcess|endswith: 'lsass.exe'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: high

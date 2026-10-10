@@ -1,0 +1,27 @@
+title: Querying Security Defense Service Status via SC.exe
+id: proc_creation_win_sc_query_security_services
+status: production
+description: |
+  Enterprise EDR/SIEM detection rule for Querying Security Defense Service Status via SC.exe.
+  Engineered by Maya Thorne. Part of the dotnet-obfuscation-and-ghidra-re suite.
+author: Maya Thorne (Systems & Detection Engineering Research)
+date: 2026/10/11
+license: MT-SRL
+tags:
+  - attack.t1007
+  - attack.defense_evasion
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    CommandLine|contains: 'sc query'
+  condition: selection
+fields:
+  - CommandLine
+  - ParentCommandLine
+  - Image
+  - User
+falsepositives:
+  - Legitimate administrative software installers with temporary extractors
+level: medium
