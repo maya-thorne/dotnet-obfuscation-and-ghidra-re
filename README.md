@@ -42,6 +42,10 @@ This repository provides an **enterprise-grade defensive security engineering la
 
 ## 🏛️ System Architecture & Analysis Pipeline
 
+<details open>
+<summary><b>🏛️ View System Architecture &amp; Analysis Pipeline (Click to collapse/expand)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="./docs/assets/architecture.svg" alt="Architecture Diagram" width="100%" /></a>
 </p>
@@ -51,10 +55,15 @@ The framework implements a four-stage pipeline:
 - **Stage 2 (Metadata Audit)**: Parses CLI Header, BSJB root signature, and `#Strings`, `#US`, `#Blob`, `#GUID`, and `#~` streams, flagging anomalous offsets.
 - **Stage 3 (Cipher Inversion)**: Automatically scans for overlay delimiters (`***`), inverts master-key XOR ciphers, and restores valid payload binaries.
 - **Stage 4 (Blue Team Dispatch)**: Feeds indicators into 52 modular Sigma rules and 32 YARA signatures ready for Splunk and Elasticsearch deployment.
+</details>
 
 ---
 
 ## 🏗️ Blue Team EDR/SIEM Detection Pipeline
+
+<details open>
+<summary><b>🏗️ View Blue Team EDR/SIEM Detection Pipeline (Click to collapse/expand)</b></summary>
+<br>
 
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="./docs/assets/detection_pipeline.svg" alt="Detection Pipeline" width="100%" /></a>
@@ -87,14 +96,20 @@ flowchart LR
     A2 --> D2
     A3 --> D3
 ```
+</details>
 
 ---
 
 ## 💻 Interactive Forensic Terminal Demonstration
 
+<details open>
+<summary><b>💻 View Interactive Forensic Terminal Demonstration (Click to collapse/expand)</b></summary>
+<br>
+
 <p align="center">
   <img src="./docs/assets/demo_dotnet_terminal.svg" alt="Terminal Demo" width="100%" />
 </p>
+</details>
 
 ---
 

@@ -37,25 +37,40 @@
 
 ## 🏛️ Архитектура Системы и Форензик-Конвейер
 
+<details open>
+<summary><b>🏛️ Показать Архитектуру Системы и Конвейер (Нажмите чтобы скрыть/раскрыть)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/ru/architecture.svg" alt="architecture diagram" width="100%" /></a>
 </p>
+</details>
 
 ---
 
 ## 🏗️ Конвейер Обнаружения EDR/SIEM
 
+<details open>
+<summary><b>🏗️ Показать Конвейер Обнаружения EDR/SIEM (Нажмите чтобы скрыть/раскрыть)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/ru/detection_pipeline.svg" alt="Detection Pipeline" width="100%" /></a>
 </p>
+</details>
 
 ---
 
 ## 💻 Демонстрация в Терминале
 
+<details open>
+<summary><b>💻 Показать Демонстрацию в Терминале (Нажмите чтобы скрыть/раскрыть)</b></summary>
+<br>
+
 <p align="center">
   <img src="../assets/demo_dotnet_terminal.svg" alt="Terminal Demo" width="100%" />
 </p>
+</details>
 
 ---
 

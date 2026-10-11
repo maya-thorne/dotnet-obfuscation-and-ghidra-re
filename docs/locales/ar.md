@@ -37,17 +37,27 @@
 
 ## 🏛️ بنية النظام ومسار الفحص الجنائي
 
+<details open>
+<summary><b>🏗️ عرض مسار كشف EDR و SIEM (انقر للطي/التوسيع)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/ar/architecture.svg" alt="architecture diagram" width="100%" /></a>
 </p>
+</details>
 
 ---
 
 ## 🏗️ مسار كشف EDR/SIEM
 
+<details open>
+<summary><b>🏗️ عرض مسار كشف EDR و SIEM (انقر للطي/التوسيع)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/ar/detection_pipeline.svg" alt="Detection Pipeline" width="100%" /></a>
 </p>
+</details>
 
 ---
 

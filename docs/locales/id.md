@@ -37,25 +37,40 @@ Repositori ini menyediakan **kerangka deteksi defensif tingkat perusahaan untuk 
 
 ## 🏛️ Arsitektur Sistem & Pipeline Forensik
 
+<details open>
+<summary><b>🏛️ Lihat Arsitektur Sistem & Pipeline (Klik untuk menutup/membuka)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/id/architecture.svg" alt="architecture diagram" width="100%" /></a>
 </p>
+</details>
 
 ---
 
 ## 🏗️ Pipeline Deteksi EDR/SIEM
 
+<details open>
+<summary><b>🏗️ Lihat Pipeline Deteksi EDR/SIEM (Klik untuk menutup/membuka)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/id/detection_pipeline.svg" alt="Detection Pipeline" width="100%" /></a>
 </p>
+</details>
 
 ---
 
 ## 💻 Demonstrasi Terminal
 
+<details open>
+<summary><b>💻 Lihat Demonstrasi Terminal Forensik (Klik untuk menutup/membuka)</b></summary>
+<br>
+
 <p align="center">
   <img src="../assets/demo_dotnet_terminal.svg" alt="Terminal Demo" width="100%" />
 </p>
+</details>
 
 ---
 

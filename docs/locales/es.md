@@ -37,25 +37,40 @@ Este repositorio proporciona una **suite de ingeniería de detección de nivel e
 
 ## 🏛️ Arquitectura del Sistema y Pipeline Forense
 
+<details open>
+<summary><b>🏛️ Ver Arquitectura del Sistema y Pipeline (Clic para plegar/desplegar)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/es/architecture.svg" alt="architecture diagram" width="100%" /></a>
 </p>
+</details>
 
 ---
 
 ## 🏗️ Pipeline de Detección EDR/SIEM
 
+<details open>
+<summary><b>🏗️ Ver Pipeline de Detección EDR/SIEM (Clic para plegar/desplegar)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/es/detection_pipeline.svg" alt="Detection Pipeline" width="100%" /></a>
 </p>
+</details>
 
 ---
 
 ## 💻 Demostración en Terminal
 
+<details open>
+<summary><b>💻 Ver Demostración en Terminal Forense (Clic para plegar/desplegar)</b></summary>
+<br>
+
 <p align="center">
   <img src="../assets/demo_dotnet_terminal.svg" alt="Terminal Demo" width="100%" />
 </p>
+</details>
 
 ---
 

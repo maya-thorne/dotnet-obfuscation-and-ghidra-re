@@ -37,25 +37,40 @@ Este repositório fornece uma **suite de detecção defensiva para analistas SOC
 
 ## 🏛️ Arquitetura do Sistema & Pipeline Forense
 
+<details open>
+<summary><b>🏗️ Ver Pipeline de Detecção EDR/SIEM (Clique para recolher/expandir)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/pt-BR/architecture.svg" alt="architecture diagram" width="100%" /></a>
 </p>
+</details>
 
 ---
 
 ## 🏗️ Pipeline de Detecção EDR/SIEM
 
+<details open>
+<summary><b>🏗️ Ver Pipeline de Detecção EDR/SIEM (Clique para recolher/expandir)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/pt-BR/detection_pipeline.svg" alt="Detection Pipeline" width="100%" /></a>
 </p>
+</details>
 
 ---
 
 ## 💻 Demonstração em Terminal
 
+<details open>
+<summary><b>💻 Ver Demonstração de Terminal Forense (Clique para recolher/expandir)</b></summary>
+<br>
+
 <p align="center">
   <img src="../assets/demo_dotnet_terminal.svg" alt="Terminal Demo" width="100%" />
 </p>
+</details>
 
 ---
 

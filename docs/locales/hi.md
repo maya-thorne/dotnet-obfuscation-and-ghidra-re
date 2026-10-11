@@ -37,25 +37,40 @@
 
 ## 🏛️ सिस्टम आर्किटेक्चर और फोरेंसिक पाइपलाइन
 
+<details open>
+<summary><b>🏛️ सिस्टम आर्किटेक्चर और पाइपलाइन देखें (संक्षिप्त/विस्तार करने के लिए क्लिक करें)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/hi/architecture.svg" alt="architecture diagram" width="100%" /></a>
 </p>
+</details>
 
 ---
 
 ## 🏗️ EDR/SIEM डिटेक्शन पाइपलाइन
 
+<details open>
+<summary><b>🏗️ ब्लू टीम EDR/SIEM डिटेक्शन पाइपलाइन देखें (संक्षिप्त/विस्तार करने के लिए क्लिक करें)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/hi/detection_pipeline.svg" alt="Detection Pipeline" width="100%" /></a>
 </p>
+</details>
 
 ---
 
 ## 💻 टर्मिनल प्रदर्शन
 
+<details open>
+<summary><b>💻 इंटरैक्टिव फोरेंसिक टर्मिनल डेमो देखें (संक्षिप्त/विस्तार करने के लिए क्लिक करें)</b></summary>
+<br>
+
 <p align="center">
   <img src="../assets/demo_dotnet_terminal.svg" alt="Terminal Demo" width="100%" />
 </p>
+</details>
 
 ---
 

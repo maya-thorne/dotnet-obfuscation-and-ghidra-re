@@ -37,25 +37,40 @@
 
 ## 🏛️ 系统架构与分析流水线
 
+<details open>
+<summary><b>🏛️ 系统架构与分析流水线展开/折叠 (点击切换)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/zh-CN/architecture.svg" alt="architecture diagram" width="100%" /></a>
 </p>
+</details>
 
 ---
 
 ## 🏗️ 蓝队 EDR/SIEM 检测流水线
 
+<details open>
+<summary><b>🏗️ 蓝队 EDR/SIEM 检测流水线展开/折叠 (点击切换)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/zh-CN/detection_pipeline.svg" alt="Detection Pipeline" width="100%" /></a>
 </p>
+</details>
 
 ---
 
 ## 💻 交互式终端取证演示
 
+<details open>
+<summary><b>💻 交互式取证终端实机演示展开/折叠 (点击切换)</b></summary>
+<br>
+
 <p align="center">
   <img src="../assets/demo_dotnet_terminal.svg" alt="Terminal Demo" width="100%" />
 </p>
+</details>
 
 ---
 

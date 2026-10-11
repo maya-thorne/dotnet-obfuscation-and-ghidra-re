@@ -37,25 +37,40 @@ Ce référentiel offre un **cadre de détection de niveau entreprise pour analys
 
 ## 🏛️ Architecture Système & Pipeline Forensique
 
+<details open>
+<summary><b>🏛️ Voir Architecture Système & Pipeline (Cliquer pour replier/déplier)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/fr/architecture.svg" alt="architecture diagram" width="100%" /></a>
 </p>
+</details>
 
 ---
 
 ## 🏗️ Pipeline de Détection EDR/SIEM
 
+<details open>
+<summary><b>🏗️ Voir Pipeline de Détection EDR/SIEM (Cliquer pour replier/déplier)</b></summary>
+<br>
+
 <p align="center">
   <a href="https://github.com/maya-thorne/dotnet-obfuscation-and-ghidra-re"><img src="../assets/locales/fr/detection_pipeline.svg" alt="Detection Pipeline" width="100%" /></a>
 </p>
+</details>
 
 ---
 
 ## 💻 Démonstration Terminal
 
+<details open>
+<summary><b>💻 Voir Démonstration Terminal Forensique (Cliquer pour replier/déplier)</b></summary>
+<br>
+
 <p align="center">
   <img src="../assets/demo_dotnet_terminal.svg" alt="Terminal Demo" width="100%" />
 </p>
+</details>
 
 ---
 
