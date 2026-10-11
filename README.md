@@ -100,6 +100,10 @@ flowchart LR
 
 ## 📚 Core Research Whitepapers
 
+<details open>
+<summary><b>📚 View 4 Core .NET CIL &amp; Packer Forensic Whitepapers</b></summary>
+<br>
+
 <table width="100%">
   <thead>
     <tr>
@@ -146,10 +150,15 @@ flowchart LR
     </tr>
   </tbody>
 </table>
+</details>
 
 ---
 
 ## 🛠️ CLI Quickstart Guide
+
+<details open>
+<summary><b>🛠️ View CLI Installation, Analysis &amp; Test Execution Commands</b></summary>
+<br>
 
 ### Installation & Execution
 ```bash
@@ -171,10 +180,15 @@ python -m src.cli target.exe --extract-overlay overlay.bin --unpack-payload unpa
 ```bash
 python -m unittest discover tests
 ```
+</details>
 
 ---
 
 ## 🛡️ MITRE ATT&CK Defense Mapping
+
+<details>
+<summary><b>🛡️ View MITRE ATT&CK Enterprise Matrix Mapping &amp; Techniques</b></summary>
+<br>
 
 Complete enterprise technique mapping and defense rule references are available in [`docs/MITRE_ATTACK_DEFENSE_MATRIX.md`](./docs/MITRE_ATTACK_DEFENSE_MATRIX.md):
 - **T1027 / T1027.002**: Software Packing & PE Overlays
@@ -183,6 +197,7 @@ Complete enterprise technique mapping and defense rule references are available 
 - **T1036 / T1036.005**: Masquerading & Hidden Console Windows
 - **T1070 / T1070.004**: Indicator Removal & Self-Deleting Droppers
 - **T1574 / T1574.010**: COR_PROFILER Hijacking
+</details>
 
 ---
 
